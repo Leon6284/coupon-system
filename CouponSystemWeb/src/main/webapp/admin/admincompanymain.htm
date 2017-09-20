@@ -1,0 +1,24 @@
+
+<input type="button" ng-click="ctrl.getAllCompanies()"
+			value="Refresh companies list">
+<table border=1>
+	<tr style="background-color: aqua; color: black">
+		<th>Id</th>
+		<th>Name</th>
+		<th>Password</th>
+		<th>E-mail</th>
+	</tr>
+	<tr ng-repeat="company in ctrl.allCompanies | orderBy: 'id'">
+		<td>{{company.id}}</td>
+		<td>{{company.compName}}</td>
+		<td><span ng-show="!company.edit">{{company.password}}</span> <input
+			type="text" style="background-color: yellow" ng-show="company.edit"
+			ng-model="company.password" /></td>
+		<td><span ng-show="!company.edit">{{company.email}}</span> <input
+			type="text" style="background-color: yellow" ng-show="company.edit"
+			ng-model="company.email" /></td>
+		<td><button ng-click="ctrl.updateCompany(company.id)">{{company.edit?'Update':'Edit'}}</button></td>
+		<td><button ng-click="ctrl.deleteCompany(company.id)">Delete</button></td>
+	</tr>
+</table>
+<p><h3 ng-if = "ctrl.isError" style="color:red">Error: {{ctrl.errMessage}}</h3></p>

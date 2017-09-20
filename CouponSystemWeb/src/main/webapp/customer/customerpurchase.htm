@@ -1,0 +1,28 @@
+
+<input type="button" ng-click="ctrl.getAllAvailableCoupons()"
+	value="Refresh available coupons list" />
+	
+<table border=1>
+	<tr>
+		<th style="background-color: aqua; color: black;'">Id</th>
+		<th style="background-color: aqua; color: black;'">Title</th>
+		<th style="background-color: aqua; color: black;'">Start date</th>
+		<th style="background-color: aqua; color: black;'">End date</th>
+		<th style="background-color: aqua; color: black;'">Amount</th>
+		<th style="background-color: aqua; color: black;'">Type</th>
+		<th style="background-color: aqua; color: black;'">Message</th>
+		<th style="background-color: aqua; color: black;'">Price</th>
+	</tr>
+	<tr ng-repeat="coupon in ctrl.allAvailableCoupons | orderBy: 'id'">
+		<td>{{coupon.id}}</td>
+		<td>{{coupon.title}}</td>
+		<td>{{coupon.startDateShort}}</td>
+		<td>{{coupon.endDateShort}}</td>
+		<td>{{coupon.amount}}</td>
+		<td>{{coupon.type}}</td>
+		<td>{{coupon.message}}</td>
+		<td>{{coupon.price}}</td>
+		<td><input type="button" ng-click="ctrl.purchaseCoupon(coupon.id)" value="Purchase" /></td>
+	</tr>
+</table>
+<p><h3 ng-if = "ctrl.isError" style="color:red">Error: {{ctrl.errMessage}}</h3></p>

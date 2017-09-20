@@ -1,0 +1,28 @@
+
+<table>
+	<tr>
+		<td>Id</td>
+		<td><input type="number" ng-model="ctrl.newCompany.id" /></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" ng-model="ctrl.newCompany.compName" /></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="text" ng-model="ctrl.newCompany.password" /></td>
+	</tr>
+	<tr>
+		<td>E-mail</td>
+		<td><input type="text" ng-model="ctrl.newCompany.email" /></td>
+	</tr>
+</table>
+<input type="button" ng-click="ctrl.createCompany()"
+	value="Create company" />
+<p><h3 ng-if = "ctrl.isError" style="color:red">Error: {{ctrl.errMessage}}</h3></p>
+
+
+
+
+
+

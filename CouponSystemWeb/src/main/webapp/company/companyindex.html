@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="Coupon">
+<head>
+<meta charset="UTF-8">
+<title>Coupon system - company page</title>
+<script src="../angular.js"></script>
+<script src="../angular-ui-router.js"></script>
+<script src="../bootstrap.js"></script>
+<script src="companyService.js"></script>
+<script src="companyroute.js"></script>
+<script src="companyMainCtrl.js"></script>
+<script src="companyCreateCtrl.js"></script>
+<script src="companyFilterCtrl.js"></script>
+<script src="../logout.js"></script>
+<script src="../whoamiDirective.js"></script>
+<script src="../footerCtrl.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+	<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 15%">
+		<h3 class="w3-bar-item">Menu</h3>
+		<a href="#/main" class="w3-bar-item w3-button">Main page</a>
+		<a href="#/create" class="w3-bar-item w3-button">Create new coupon</a> 
+		<a href="#/filter" class="w3-bar-item w3-button">Filtered coupon list</a>
+		<a href="#/logout" class="w3-bar-item w3-button">Logout</a>
+	</div>
+	
+	<div style="margin-left:15%">
+ 
+	<div class="w3-container w3-teal">
+ 
+  		<h1>Welcome Company</h1>
+	</div>
+
+	<div ui-view></div>
+	<div ng-controller="FooterCtrl as ft"  style="margin-top: 20%">
+		<who-am-i ctype="company" sayname="sayNameCompany"></who-am-i>
+	</div>
+	
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<input type="button" ng-click="ctrl.getAllCustomers()"
+	value="Refresh customers list" />
+<table border=1>
+	<tr style="background-color: aqua; color: black">
+		<th>Id</th>
+		<th>Name</th>
+		<th>Password</th>
+	</tr>
+	<tr ng-repeat="customer in ctrl.allCustomers | orderBy: 'id'">
+		<td>{{customer.id}}</td>
+		<td>{{customer.custName}}</td>
+		<td><span ng-show="!customer.edit">{{customer.password}}</span> <input
+			type="text" style="background-color: yellow" ng-show="customer.edit"
+			ng-model="customer.password" /></td>
+		<td><button ng-click="ctrl.updateCustomer(customer.id)">{{customer.edit?'Update':'Edit'}}</button></td>
+		<td><button ng-click="ctrl.deleteCustomer(customer.id)">Delete</button></td>
+	</tr>
+</table>
+<p><h3 ng-if = "ctrl.isError" style="color:red">Error: {{ctrl.errMessage}}</h3></p>

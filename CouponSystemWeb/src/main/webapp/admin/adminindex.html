@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="Coupon">
+<head>
+<meta charset="UTF-8">
+<title>Coupon system - admin page</title>
+<script src="../angular.js"></script>
+<script src="../angular-ui-router.js"></script>
+<script src="../bootstrap.js"></script>
+<script src="adminService.js"></script>
+<script src="adminroute.js"></script>
+<script src="adminCompanyMainCtrl.js"></script>
+<script src="adminCompanyCreateCtrl.js"></script>
+<script src="adminCustomerMainCtrl.js"></script>
+<script src="adminCustomerCreateCtrl.js"></script>
+<script src="../logout.js"></script>
+<script src="../whoamiDirective.js"></script>
+<script src="../footerCtrl.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+	<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 15%">
+		<h3 class="w3-bar-item">Menu</h3>
+		<a href="#/companymain" class="w3-bar-item w3-button">Company main page</a>
+		<a href="#/companycreate" class="w3-bar-item w3-button">Create new company</a> 
+		<a href="#/customermain" class="w3-bar-item w3-button">Customer main page</a>
+		<a href="#/customercreate" class="w3-bar-item w3-button">Create new customer</a>
+		<a href="#/logout" class="w3-bar-item w3-button">Logout</a>
+	</div>
+	
+	<div style="margin-left:15%">
+ 
+	<div class="w3-container w3-teal">
+ 
+  		<h1>Welcome Administrator</h1>
+	</div>
+	
+	<div ui-view></div>
+	<div ng-controller="FooterCtrl as ft" style="margin-top: 20%">
+		<who-am-i ctype="administrator" sayname="sayNameAdmin"></who-am-i>
+	</div>
+	
+	</div>
+	
+</body>
+</html>

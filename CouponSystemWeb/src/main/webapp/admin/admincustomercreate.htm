@@ -1,0 +1,18 @@
+
+<table>
+	<tr>
+		<td>Id</td>
+		<td><input type="number" ng-model="ctrl.newCustomer.id" /></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" ng-model="ctrl.newCustomer.custName" /></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="text" ng-model="ctrl.newCustomer.password" /></td>
+	</tr>
+</table>
+<input type="button" ng-click="ctrl.createCustomer()"
+	value="Create customer" />
+<p><h3 ng-if = "ctrl.isError" style="color:red">Error: {{ctrl.errMessage}}</h3></p>

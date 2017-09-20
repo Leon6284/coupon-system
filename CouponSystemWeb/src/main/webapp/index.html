@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<script>
+	window.onload = function() {
+		var cookies = document.cookie
+		var arr = cookies.split(';')
+		if (cookies.indexOf('userType') > -1 && cookies.indexOf('userName') > -1 && cookies.indexOf('password') > -1) {
+			for (var i = 0; i < arr.length; i++) {
+				var cur = arr[i]
+				if (cur.indexOf('userType') > -1) {
+					var userType = cur.substring(cur.indexOf('userType') + 9)
+				}
+				if (cur.indexOf('userName') > -1) {
+					var userName = cur.substring(cur.indexOf('userName') + 9)
+				}
+				if (cur.indexOf('password') > -1) {
+					var password = cur.substring(cur.indexOf('password') + 9)
+				}
+			}
+			
+			document.loginForm.type.value = userType
+			document.loginForm.username.value = userName
+			document.loginForm.password.value = password
+			document.loginForm.submit()
+		}
+	}
+</script>
+</head>
+<body>
+	<img src="indexpic.jpg"/>
+	<form name="loginForm" action="login" method="post">
+		<input type="radio" name="type" value="Admin"  />Administrator
+		<input type="radio" name="type" value="Company" />Company <input
+			type="radio" name="type" value="Customer" />Customer<br><br>
+		Username: <input type="text" name="username" /><br><br> Password: <input
+			type="password" name="password" /><br><br> <input type="submit"
+			value="Login" />
+	</form>
+</body>
+</html>

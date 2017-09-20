@@ -1,0 +1,46 @@
+
+<table>
+	<tr>
+		<td>Id</td>
+		<td><input type="number" ng-model="ctrl.newCoupon.id" /></td>
+	</tr>
+	<tr>
+		<td>Title</td>
+		<td><input type="text" ng-model="ctrl.newCoupon.title" /></td>
+	</tr>
+	<tr>
+		<td>Start date</td>
+		<td><input type="text" ng-model="ctrl.newCoupon.startDateShort" /></td>
+	</tr>
+	<tr>
+		<td>End date</td>
+		<td><input type="text" ng-model="ctrl.newCoupon.endDateShort" /></td>
+	</tr>
+	<tr>
+		<td>Amount</td>
+		<td><input type="number" ng-model="ctrl.newCoupon.amount" /></td>
+	</tr>
+	<tr>
+		<td>Type</td>
+		<td><select ng-model="ctrl.newCoupon.type">
+				<option value="RESTAURANTS">Restaurants</option>
+				<option value="ELECTRICITY">Electricity</option>
+				<option value="FOOD">Food</option>
+				<option value="HEALTH">Health</option>
+				<option value="SPORTS">Sports</option>
+				<option value="CAMPING">Camping</option>
+				<option value="TRAVELLING">Travelling</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>Message</td>
+		<td><input type="text" ng-model="ctrl.newCoupon.message" /></td>
+	</tr>
+	<tr>
+		<td>Price</td>
+		<td><input type="number" ng-model="ctrl.newCoupon.price" /></td>
+	</tr>
+</table>
+<input type="button" ng-click="ctrl.createCoupon()"
+	value="Create coupon" />
+<p><h3 ng-if = "ctrl.isError" style="color:red">Error: {{ctrl.errMessage}}</h3></p>
